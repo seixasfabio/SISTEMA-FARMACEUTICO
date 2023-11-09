@@ -1,4 +1,4 @@
-const inputPrincipio = document.querySelector("#PrincipioAtivo");
+const inputNomeMedicamento = document.querySelector("#NomeMedicamento");
 const inputLote = document.querySelector("#Lote");
 const inputVencimento = document.querySelector("#Vencimento");
 const bottonSubmit = document.querySelector("#Cadastrar");
@@ -6,12 +6,12 @@ const bottonSubmit = document.querySelector("#Cadastrar");
 function verificar(event) {
     event.preventDefault();
     const cadastro = {
-        PrincipioAtivo : inputPrincipio.value,
+        Nome : inputNomeMedicamento.value,
         Lote : inputLote.value,
         Vencimento : inputVencimento.value,
     }
     const Medicamento = Array();
-    Medicamento[document.querySelector("#NomeMedicamento").value] = cadastro;
+    Medicamento[document.querySelector("#PrincipioAtivo").value] = cadastro;
     
     console.log(Medicamento);
 }
