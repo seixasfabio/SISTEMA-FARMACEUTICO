@@ -12,7 +12,7 @@ function verificar(event) {
     }
     const Medicamento = Array();
     Medicamento[document.querySelector("#NomeMedicamento").value] = cadastro;
-    Medicamento.push(cadastro);
+    
     console.log(Medicamento);
 }
 bottonSubmit.onclick = verificar;
