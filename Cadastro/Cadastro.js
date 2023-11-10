@@ -1,18 +1,21 @@
-const inputNomeMedicamento = document.querySelector("#NomeMedicamento");
-const inputLote = document.querySelector("#Lote");
-const inputVencimento = document.querySelector("#Vencimento");
-const bottonSubmit = document.querySelector("#Cadastrar");
+
+var inputLote = document.querySelector("#Lote");
+var inputVencimento = document.querySelector("#Vencimento");
+var bottonSubmit = document.querySelector("#Cadastrar");
 
 function verificar(event) {
+    var inputNomeMedicamento = document.querySelector("#NomeMedicamento").value;
     event.preventDefault();
     const cadastro = {
-        Nome : inputNomeMedicamento.value,
+        
         Lote : inputLote.value,
         Vencimento : inputVencimento.value,
     }
     const Medicamento = Array();
-    Medicamento[document.querySelector("#PrincipioAtivo").value] = cadastro;
+    Medicamento[document.querySelector("#PrincipioAtivo").value] = inputNomeMedicamento;
+    inputNomeMedicamento = cadastro;
     
     console.log(Medicamento);
+    console.log(inputNomeMedicamento);
 }
 bottonSubmit.onclick = verificar;
