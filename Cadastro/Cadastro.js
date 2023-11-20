@@ -1,21 +1,16 @@
 
-var inputLote = document.querySelector("#Lote");
-var inputVencimento = document.querySelector("#Vencimento");
-var bottonSubmit = document.querySelector("#Cadastrar");
-
-function verificar(event) {
-    var inputNomeMedicamento = document.querySelector("#NomeMedicamento").value;
-    event.preventDefault();
-    const cadastro = {
-        
-        Lote : inputLote.value,
-        Vencimento : inputVencimento.value,
-    }
-    const Medicamento = Array();
-    Medicamento[document.querySelector("#PrincipioAtivo").value] = inputNomeMedicamento;
-    inputNomeMedicamento = cadastro;
-    
-    console.log(Medicamento);
-    console.log(inputNomeMedicamento);
+class Medicamento{
+    constructor(){
+        this.nome  = document.querySelector("#NomeMedicamento").value
+        this.principioAtivo = document.querySelector("#PrincipioAtivo").value
+        this.lote = document.querySelector("#Lote").value
+        this.vencimento = document.querySelector("#Vencimento").value
+    }  
 }
-bottonSubmit.onclick = verificar;
+function LerDados(event) {
+    event.preventDefault();
+    let medicamento = new Medicamento();
+    console.log(medicamento);
+}
+let botaoCadastro = document.querySelector("#Cadastrar");
+botaoCadastro.onclick = LerDados;
